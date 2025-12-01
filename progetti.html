@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetti - Mad Entertainment™</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Mad Entertainment Logo" class="logo-img">
+                <h1>Mad Entertainment™</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="progetti.html" class="active">Progetti</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="projects">
+            <div class="container">
+                <h2>I Nostri Progetti</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Project Gametime Chapter 1</h3>
+                        <p>Siamo tornati nella Gametime Park molti anni dopo che tutti sono spariti. Un'esperienza immersiva che unisce nostalgia e mistero in un parco abbandonato che nasconde segreti mai rivelati.</p>
+                        <div class="project-platform">
+                            <span class="platform-tag">Roblox</span>
+                        </div>
+                        <a href="https://www.roblox.com/share?code=27086509ba8dbe4c85e65effb9724b0b&type=ExperienceDetails&stamp=1764441628677" target="_blank" class="btn btn-roblox">
+                            🎮 Gioca su Roblox
+                        </a>
+                    </div>
+                    <div class="project-card">
+                        <h3>The Sewers</h3>
+                        <p>Dopo essere scappati con la fionda ci ritroviamo nella Ossre station con nuovi mostri dietro l'angolo. Un'avventura adrenalinica nelle fogne della città.</p>
+                        <div class="countdown-container">
+                            <h4>Prossima Uscita</h4>
+                            <div class="countdown" id="countdown">
+                                <div class="countdown-item">
+                                    <span class="countdown-number" id="days">00</span>
+                                    <span class="countdown-label">Giorni</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-number" id="hours">00</span>
+                                    <span class="countdown-label">Ore</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-number" id="minutes">00</span>
+                                    <span class="countdown-label">Minuti</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-number" id="seconds">00</span>
+                                    <span class="countdown-label">Secondi</span>
+                                </div>
+                            </div>
+                            <p class="release-date">Data di uscita: 30 Gennaio 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mad Entertainment™. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Countdown per The Sewers - 30 Gennaio 2026
+        function updateCountdown() {
+            const targetDate = new Date('January 30, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="countdown-finished">🎉 Disponibile ora!</div>';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Aggiorna il countdown ogni secondo
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,727 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header e Navigazione */
+header {
+    background: #000000;
+    color: #ffffff;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* TM Symbol Styling - SOLO QUI */
+.logo h1::after {
+    content: "™";
+    font-size: 0.7em;
+    vertical-align: super;
+    margin-left: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #cccccc;
+    text-decoration: underline;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Main Content */
+main {
+    margin-top: 80px;
+    flex: 1;
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background: #000000;
+    color: #ffffff;
+    padding: 120px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+/* RIMOSSO il TM dalla hero section */
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #cccccc;
+}
+
+.btn {
+    display: inline-block;
+    background: #000000;
+    color: #ffffff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+    border: 2px solid #000000;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+.btn-email {
+    background: #000000;
+    border: 2px solid #000000;
+}
+
+.btn-email:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+
+.about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #333333;
+}
+
+/* Projects Section */
+.projects {
+    padding: 80px 0;
+    width: 100%;
+}
+
+.projects h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #000000;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    border: 2px solid #000000;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+    color: #000000;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.project-card p {
+    color: #333333;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+}
+
+/* Project Platform Tags */
+.project-platform {
+    margin: 1rem 0;
+}
+
+.platform-tag {
+    display: inline-block;
+    background: #000000;
+    color: #ffffff;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #000000;
+}
+
+/* Roblox Button */
+.btn-roblox {
+    background: #00a2ff;
+    color: #ffffff;
+    border: 2px solid #00a2ff;
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-roblox:hover {
+    background: #ffffff;
+    color: #00a2ff;
+    border: 2px solid #00a2ff;
+    transform: translateY(-2px);
+}
+
+/* Countdown Styles */
+.countdown-container {
+    margin: 2rem 0 1rem 0;
+    padding: 1.5rem;
+    background: #f8f8f8;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    text-align: center;
+}
+
+.countdown-container h4 {
+    color: #000000;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+
+.countdown-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #000000;
+    background: #ffffff;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    min-width: 60px;
+    text-align: center;
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    color: #333333;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.release-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.countdown-finished {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00a2ff;
+    padding: 1rem;
+    background: #f0f8ff;
+    border-radius: 8px;
+    border: 2px solid #00a2ff;
+}
+
+/* Animazione per il countdown */
+.countdown-number {
+    transition: all 0.3s ease;
+}
+
+.countdown-number:hover {
+    transform: scale(1.05);
+    background: #000000;
+    color: #ffffff;
+}
+
+/* Contacts Section */
+.contacts {
+    padding: 80px 0;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.contacts .container {
+    width: 100%;
+}
+
+.contacts h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #000000;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-section {
+    background: #f8f8f8;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 2px solid #000000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.contact-section h3 {
+    color: #000000;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.contact-section p {
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.contact-email {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #000000;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.contact-email:hover {
+    background: #000000;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.response-info {
+    background: #e8e8e8;
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid #000000;
+}
+
+.response-info h4 {
+    color: #000000;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.response-info p {
+    color: #333333;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Bug Report Button */
+.btn-bug {
+    background: #ff4444;
+    color: #ffffff;
+    border: 2px solid #ff4444;
+    margin: 1rem 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 600;
+    justify-content: center;
+}
+
+.btn-bug:hover {
+    background: #ffffff;
+    color: #ff4444;
+    border: 2px solid #ff4444;
+    transform: translateY(-2px);
+}
+
+.email-tips {
+    margin-top: 1.5rem;
+    text-align: left;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #000000;
+}
+
+.email-tips h4 {
+    color: #000000;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.email-tips ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.email-tips li {
+    padding: 0.5rem 0;
+    color: #333333;
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.email-tips li:before {
+    content: "•";
+    color: #000000;
+    font-weight: bold;
+    position: absolute;
+    left: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 0;
+    width: 100%;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: calc(100vh - 80px);
+        top: 80px;
+        background: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        margin: 2rem 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        padding: 80px 0;
+    }
+
+    .contact-email {
+        font-size: 1.1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .contact-section {
+        padding: 2rem;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    .logo-img {
+        height: 32px;
+    }
+
+    .project-card {
+        padding: 2rem;
+    }
+
+    .about, .projects, .contacts {
+        padding: 60px 0;
+    }
+
+    .btn-roblox, .btn-bug {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .countdown {
+        gap: 0.5rem;
+    }
+    
+    .countdown-item {
+        min-width: 60px;
+    }
+    
+    .countdown-number {
+        font-size: 1.5rem;
+        min-width: 50px;
+        padding: 0.4rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+
+    .contacts {
+        display: block;
+        padding: 60px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        padding: 1.5rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .contact-content {
+        gap: 1.5rem;
+    }
+
+    .projects-grid {
+        gap: 1.5rem;
+    }
+
+    .countdown {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+    
+    .countdown-item {
+        min-width: 55px;
+    }
+    
+    .countdown-number {
+        font-size: 1.3rem;
+        min-width: 45px;
+    }
+    
+    .countdown-container {
+        padding: 1rem;
+    }
+
+    .contact-section {
+        padding: 1.5rem;
+    }
+}
+
+/* Animazioni per il menu mobile */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* Scroll smooth */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles per accessibilità */
+a:focus,
+button:focus {
+    outline: 2px solid #00a2ff;
+    outline-offset: 2px;
+}
+
+/* Loading states */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+    background: #000000;
+    color: #ffffff;
+    transform: none;
+}
