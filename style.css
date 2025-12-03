@@ -132,7 +132,6 @@ main {
     color: #ffffff;
 }
 
-/* RIMOSSO il TM dalla hero section */
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
@@ -350,6 +349,115 @@ main {
     transform: scale(1.05);
     background: #000000;
     color: #ffffff;
+}
+
+/* Story Page Styles */
+.story {
+    padding: 80px 0;
+    width: 100%;
+}
+
+.story h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #000000;
+}
+
+.story-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.story-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: #000000;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-date {
+    flex: 0 0 150px;
+    text-align: center;
+    font-weight: 700;
+    color: #000000;
+    font-size: 1.2rem;
+    padding: 1rem;
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    margin: 0 2rem;
+    z-index: 1;
+}
+
+.timeline-content {
+    flex: 1;
+    padding: 2rem;
+    background: #f8f8f8;
+    border-radius: 12px;
+    border: 2px solid #000000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+    color: #000000;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.timeline-content p {
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.company-values {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #000000;
+}
+
+.company-values h4 {
+    color: #000000;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.company-values ul {
+    list-style: none;
+    padding: 0;
+}
+
+.company-values li {
+    padding: 0.5rem 0;
+    color: #333333;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.company-values li:before {
+    content: "✓";
+    color: #000000;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
 }
 
 /* Contacts Section */
@@ -586,7 +694,7 @@ footer {
         padding: 2rem;
     }
 
-    .about, .projects, .contacts {
+    .about, .projects, .contacts, .story {
         padding: 60px 0;
     }
 
@@ -617,6 +725,27 @@ footer {
     .contacts {
         display: block;
         padding: 60px 0;
+    }
+
+    /* Responsive per timeline */
+    .story-timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: column !important;
+        margin-left: 60px;
+    }
+    
+    .timeline-date {
+        flex: none;
+        width: 120px;
+        margin: 0 0 1rem 0;
+        text-align: left;
+    }
+    
+    .timeline-content {
+        margin-left: 0;
     }
 }
 
@@ -664,6 +793,21 @@ footer {
     }
 
     .contact-section {
+        padding: 1.5rem;
+    }
+
+    /* Responsive per timeline mobile */
+    .timeline-item {
+        margin-left: 40px;
+    }
+    
+    .timeline-date {
+        width: 100px;
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    
+    .timeline-content {
         padding: 1.5rem;
     }
 }

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Nostra Storia - Mad Entertainment™</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Mad Entertainment Logo" class="logo-img">
+                <h1>Mad Entertainment™</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="storia.html" class="active">Storia</a></li>
+                <li><a href="progetti.html">Progetti</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="story">
+            <div class="container">
+                <h2>La Nostra Storia</h2>
+                
+                <div class="story-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <h3>La Fondazione</h3>
+                            <p>Mad Entertainment™ è stata fondata nel 2024 dall'attuale Chief Executive Officer Rocco Mattia. Da subito l'obiettivo è stato chiaro: creare esperienze di intrattenimento innovative e di alta qualità.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Febbraio 2025</div>
+                        <div class="timeline-content">
+                            <h3>Il Primo Video</h3>
+                            <p>Nel febbraio 2025, Mad Entertainment (precedentemente Mob Studio) pubblicò il suo primo video, segnando l'inizio della nostra avventura nel mondo dell'intrattenimento digitale.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" id="gametime-chapter1">
+                        <div class="timeline-date">4 Agosto 2025</div>
+                        <div class="timeline-content">
+                            <h3>Project Gametime Chapter 1</h3>
+                            <p>Il lancio di <strong>Project Gametime Chapter 1</strong> su Roblox il 4 agosto 2025 ha segnato una pietra miliare. Il gioco è diventato rapidamente popolare per la sua esperienza immersiva che unisce nostalgia e mistero nel Gametime Park.</p>
+                            <a href="progetti.html" class="btn" style="margin-top: 1rem; background: #00a2ff; border-color: #00a2ff;">
+                                🎮 Vai al Progetto
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" id="gametime-chapter2">
+                        <div class="timeline-date">30 Gennaio 2026</div>
+                        <div class="timeline-content">
+                            <h3>Project Gametime Chapter 2</h3>
+                            <p>Attualmente in sviluppo, <strong>Project Gametime Chapter 2</strong> è previsto per il 30 gennaio 2026. Il capitolo continua l'avventura con nuove sfide e misteri da scoprire.</p>
+                            <div class="countdown-container">
+                                <h4>Prossima Uscita</h4>
+                                <div class="countdown" id="story-countdown">
+                                    <div class="countdown-item">
+                                        <span class="countdown-number" id="story-days">00</span>
+                                        <span class="countdown-label">Giorni</span>
+                                    </div>
+                                    <div class="countdown-item">
+                                        <span class="countdown-number" id="story-hours">00</span>
+                                        <span class="countdown-label">Ore</span>
+                                    </div>
+                                    <div class="countdown-item">
+                                        <span class="countdown-number" id="story-minutes">00</span>
+                                        <span class="countdown-label">Minuti</span>
+                                    </div>
+                                    <div class="countdown-item">
+                                        <span class="countdown-number" id="story-seconds">00</span>
+                                        <span class="countdown-label">Secondi</span>
+                                    </div>
+                                </div>
+                                <p class="release-date">Data di uscita: 30 Gennaio 2026</p>
+                            </div>
+                            <a href="progetti.html" class="btn" style="margin-top: 1rem; background: #333; border-color: #333;">
+                                📋 Vai ai Progetti
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Oggi</div>
+                        <div class="timeline-content">
+                            <h3>Mad Entertainment Oggi</h3>
+                            <p>Oggi Mad Entertainment™ è un'azienda in crescita che lavora con passione per garantire un intrattenimento sempre più bello e coinvolgente. Continuiamo a innovare, creando esperienze memorabili per i nostri giocatori in tutto il mondo.</p>
+                            <div class="company-values">
+                                <h4>I Nostri Valori</h4>
+                                <ul>
+                                    <li><strong>Innovazione:</strong> Cerchiamo sempre nuove idee e tecnologie</li>
+                                    <li><strong>Qualità:</strong> Ogni progetto deve raggiungere standard elevati</li>
+                                    <li><strong>Passione:</strong> Amiamo ciò che facciamo</li>
+                                    <li><strong>Comunità:</strong> Ascoltiamo i nostri giocatori e cresciamo insieme</li>
+                                </ul>
+                            </div>
+                            <a href="contatti.html" class="btn" style="margin-top: 1rem;">
+                                📞 Contattaci
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mad Entertainment™. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Countdown per la pagina storia
+        function updateStoryCountdown() {
+            const targetDate = new Date('January 30, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('story-countdown').innerHTML = '<div class="countdown-finished">🎉 Disponibile ora!</div>';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('story-days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('story-hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('story-minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('story-seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Aggiorna il countdown ogni secondo
+        updateStoryCountdown();
+        setInterval(updateStoryCountdown, 1000);
+    </script>
+</body>
+</html>
